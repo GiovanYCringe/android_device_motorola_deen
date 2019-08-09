@@ -52,6 +52,9 @@ on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules msm_11ad_proxy
 
 on init
+    # Disable powersaving
+    write /sys/module/lpm_levels/parameters/sleep_disabled 1
+
     # Create cgroup mount point for memory
     mkdir /sys/fs/cgroup/memory/bg 0750 root system
     write /sys/fs/cgroup/memory/bg/memory.swappiness 140
@@ -236,6 +239,66 @@ on boot
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
+<<<<<<< HEAD
+=======
+    # restore default console_loglevel to KERN_DEBUG
+    # restore default_message_loglevel to KERN_WARNING
+    write /proc/sys/kernel/printk "7 4 1 7"
+
+    # Change ownership and permission for vibrator
+    chown system system /sys/class/timed_output/vibrator/enable
+    chmod 0660 /sys/class/timed_output/vibrator/enable
+    chown system system /sys/class/leds/vibrator/state
+    chmod 0660 /sys/class/leds/vibrator/state
+    chown system system /sys/class/leds/vibrator/activate
+    chmod 0660 /sys/class/leds/vibrator/activate
+    chown system system /sys/class/leds/vibrator/duration
+    chmod 0660 /sys/class/leds/vibrator/duration
+    chown root oem_5020 /sys/bus/i2c/devices/2-005a/reduce
+
+    # Change ownership of aov related sysfs entries
+    chown audio audio /sys/kernel/aov/trigger
+    chown audio audio /sys/kernel/aov/register
+    chown audio audio /sys/kernel/aov/event
+
+    # Quiet binder logs
+    write /sys/module/binder/parameters/debug_mask 0x5
+
+    # Clear cooldown state
+    mkdir /mnt/vendor/persist/chargeonly 0770 system system
+    write /mnt/vendor/persist/chargeonly/cooldown n
+    chown system system /mnt/vendor/persist/chargeonly/cooldown
+    chmod 0660 /mnt/vendor/persist/chargeonly/cooldown
+
+    start vendor.rmt_storage
+    start rfs_access
+
+    ####Regionalization config and prop files####
+    chmod 0644 /persist/speccfg/spec
+    chmod 0644 /persist/speccfg/devicetype
+    chmod 0644 /persist/speccfg/mbnversion
+    chmod 0644 /persist/speccfg/.not_triggered
+    chmod 0644 /persist/speccfg/vendor_ro.prop
+    chmod 0644 /persist/speccfg/vendor_persist.prop
+    chmod 0644 /persist/speccfg/submask
+    chmod 0644 /persist/speccfg/partition
+    chown system system /persist/speccfg/spec
+    chown system system /persist/speccfg/devicetype
+    chown system system /persist/speccfg/mbnversion
+    chown system system /persist/speccfg/.not_triggered
+    chown system system /persist/speccfg/vendor_ro.prop
+    chown system system /persist/speccfg/vendor_persist.prop
+    chown system system /persist/speccfg/submask
+    chown system system /persist/speccfg/partition
+
+    # Turn on sleep modes
+    write /sys/module/lpm_levels/parameters/sleep_disabled 0
+
+    # set USB props
+    setprop sys.usb.controller "a800000.dwc3"
+    setprop sys.usb.configfs 1
+
+>>>>>>> 94f1d7de (sdm660-common: rootdir: Keep powersaving disabled during boottime)
     #sensors log dir
     mkdir /data/vendor/sensors
     chown system system /data/vendor/sensors

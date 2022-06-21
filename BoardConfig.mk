@@ -169,6 +169,7 @@ ifeq ($(TARGET_PREBUILT_KERNEL),)
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     DTC=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
     MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
+endif
 
 # Display
 TARGET_SCREEN_DENSITY := 300

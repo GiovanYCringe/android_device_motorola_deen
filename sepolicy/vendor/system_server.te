@@ -1,0 +1,30 @@
+binder_call(system_server,rild);
+
+allow system_server sysfs_vibrator:file read;
+allow system_server fpc_extension_service:hwservice_manager find;
+allow system_server vendor_keylayout_file:dir r_dir_perms;
+allow system_server vendor_keylayout_file:file r_file_perms;
+allow system_server vendor_idc_file:dir r_dir_perms;
+allow system_server vendor_idc_file:file r_file_perms;
+allow system_server sysfs_homebutton:file rw_file_perms;
+allow system_server sysfs_homebutton:dir r_dir_perms;
+
+# MotSpeakerHelperProximity
+binder_call(system_server, hal_audio_default)
+
+get_prop(system_server, exported_camera_prop)
+get_prop(system_server, userspace_reboot_config_prop)
+get_prop(system_server, userspace_reboot_exported_prop)
+
+allow system_server sysfs_livedisplay_tuneable:file { read write };
+allow system_server hal_audio_default:binder { call transfer };
+
+# Smart_charging
+allow system_server sysfs_healthd:file rw_file_perms;
+
+# rtc
+allow system_server sysfs_msm_subsys:file r_file_perms;
+
+allow system_server sysfs_battery_supply:file r_file_perms;
+
+allow system_server sysfs_batteryinfo:dir r_dir_perms;

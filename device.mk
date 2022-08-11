@@ -140,6 +140,7 @@ PRODUCT_PACKAGES += \
     libxml2 \
     libwui \
     vendor.qti.hardware.camera.device@1.0:64 \
+    GoogleCameraGoPrebuilt
 
 # QTI Permissions
 PRODUCT_COPY_FILES += \

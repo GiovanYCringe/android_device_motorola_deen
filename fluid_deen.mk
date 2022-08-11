@@ -19,7 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
-# Inherit some common Lineage stuff
+# Inherit some common Fluid stuff
 $(call inherit-product, vendor/fluid/config/common.mk)
 
 # Inherit from device
@@ -38,3 +38,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=deen \
     PRIVATE_BUILD_DESC="deen-user 10 QPKS30.54-22-27 92b8a release-keys"
 
+ BUILD_FINGERPRINT := motorola/deen/deen_sprout:10/QPKS30.54-22-27/92b8a:user/release-keys

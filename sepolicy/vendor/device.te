@@ -1,3 +1,4 @@
 type adspd_device, dev_type;
 type isdbt_device, dev_type;
 type laser_device, dev_type;
+typeattribute system_block_device super_block_device_type;

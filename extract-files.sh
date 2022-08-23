@@ -92,6 +92,7 @@ function blob_fixup() {
                 "${PATCHELF}" --add-needed "libqsap_shim.so" "$LIBQSAP_SHIM"
             done
             ;;
+<<<<<<< HEAD
         # memset shim
         vendor/bin/charge_only_mode)
             for  LIBMEMSET_SHIM in $(grep -L "libmemset_shim.so" "${2}"); do
@@ -102,6 +103,21 @@ function blob_fixup() {
         vendor/lib/mediadrm/libwvhidl.so | vendor/mediadrm/lib64/libwvhidl.so)
            "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
            ;;
+=======
+        # Use VNDK 32 libhidlbase
+        vendor/lib64/motorola.hardware.audio.adspd@1.0.so)
+            "${PATCHELF_0_8}" --remove-needed "libhidlbase.so" "${2}"
+            sed -i "s/libhidltransport.so/libhidlbase-v32.so\x00/" "${2}"
+            ;;
+        vendor/lib64/com.fingerprints.extension@1.0.so)
+            "${PATCHELF_0_8}" --remove-needed "libhidlbase.so" "${2}"
+            sed -i "s/libhidltransport.so/libhidlbase-v32.so\x00/" "${2}"
+            ;;
+        system/lib64/motorola.hardware.vibrator@1.0.so)
+            "${PATCHELF_0_8}" --remove-needed "libhidlbase.so" "${2}"
+            sed -i "s/libhidltransport.so/libhidlbase-v32.so\x00/" "${2}"
+            ;;
+>>>>>>> 7abe47c0 (beckham:  use libhidlbase from vndk v32)
     esac
 }
 

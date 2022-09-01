@@ -40,9 +40,6 @@ vendor.audio.use.sw.ape.decoder=true
 vendor.audio_hal.period_size=240
 vendor.voice.path.for.pcm.voip=false
 
-# Bluetooth
-vendor.qcom.bluetooth.soc=pronto
-
 # Camera
 vendor.camera.aux.packageblacklist=com.discord
 vendor.camera.aux.packagelist=,com.android.camera2,com.google.android.GoogleCamera.cameralite
@@ -67,15 +64,14 @@ vendor.gralloc.enable_fb_ubwc=1
 persist.vendor.audio_fx.current=dolby
 ro.vendor.dolby.dax.version=DS1_2.2.0.0_r1
 
+# media
+debug.stagefright.omx_default_rank.sw-audio=16
+
 # DRM
 drm.service.enabled=true
 
 # Factory reset partition
 ro.frp.pst=/dev/block/platform/soc/7824900.sdhci/by-name/frp
-
-# FM
-ro.fm.transmitter=false
-ro.vendor.fm.use_audio_session=true
 
 # Graphics
 ro.hardware.egl=adreno
@@ -83,9 +79,6 @@ ro.hardware.vulkan=adreno
 
 # Keystore
 ro.hardware.keystore_desede=true
-
-# media
-debug.stagefright.omx_default_rank.sw-audio=16
 
 # OEM Unlock reporting
 ro.oem_unlock_supported=1

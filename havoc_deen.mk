@@ -19,9 +19,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
-# Inherit some common aicp stuff
-$(call inherit-product, vendor/aicp/config/common_full_phone.mk)
-$(call inherit-product, vendor/aicp/config/aosp_audio.mk)
+# Inherit some common havoc stuff
+$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+$(call inherit-product, vendor/havoc/config/audio.mk)
 
 # Inherit from device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -30,7 +30,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := deen
 PRODUCT_MANUFACTURER := motorola
-PRODUCT_NAME := aicp_deen
+PRODUCT_NAME := havoc_deen
 PRODUCT_MODEL := motorola one
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola

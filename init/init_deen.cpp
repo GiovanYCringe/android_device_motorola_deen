@@ -112,3 +112,9 @@ void vendor_load_properties()
     std::string carrier = GetProperty("ro.boot.carrier", "unknown");
     property_override("ro.carrier", carrier.c_str());
 }
+
+constexpr const char *BUILD_DESCRIPTION[] = {
+    "walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys",
+    "walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys",
+    "walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys",
+};

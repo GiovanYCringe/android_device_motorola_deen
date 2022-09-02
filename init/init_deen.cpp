@@ -117,4 +117,7 @@ constexpr const char *BUILD_DESCRIPTION[] = {
     "walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys",
     "walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys",
     "walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys",
+
+    // Misc
+    property_override("ro.apex.updatable", "false");
 };

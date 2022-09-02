@@ -58,6 +58,9 @@ AB_OTA_PARTITIONS += \
     system \
     vendor
 
+# APEX
+OVERRIDE_TARGET_FLATTEN_APEX := true
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 BOARD_SUPPORTS_SOUND_TRIGGER_HAL := true

@@ -14,9 +14,18 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
+<<<<<<< HEAD
     $(LOCAL_DIR)/havoc_deen.mk
 
 COMMON_LUNCH_CHOICES := \
     havoc_deen-user \
     havoc_deen-userdebug \
     havoc_deen-eng
+=======
+    $(LOCAL_DIR)/lineage_deen.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_deen-user \
+    lineage_deen-userdebug \
+    lineage_deen-eng
+>>>>>>> parent of 107318d4 (deen: Aicipify)

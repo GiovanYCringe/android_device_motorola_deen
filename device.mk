@@ -67,6 +67,8 @@ PRODUCT_PACKAGES += \
     bootctrl.msm8953.recovery
 
 # Audio
+PREBUILT_AUDIOHAL := true
+
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@4.0-impl_32 \
     android.hardware.audio.service_32 \

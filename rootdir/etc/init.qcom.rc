@@ -239,8 +239,6 @@ on boot
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
-<<<<<<< HEAD
-=======
     # restore default console_loglevel to KERN_DEBUG
     # restore default_message_loglevel to KERN_WARNING
     write /proc/sys/kernel/printk "7 4 1 7"
@@ -298,7 +296,6 @@ on boot
     setprop sys.usb.controller "a800000.dwc3"
     setprop sys.usb.configfs 1
 
->>>>>>> 94f1d7de (sdm660-common: rootdir: Keep powersaving disabled during boottime)
     #sensors log dir
     mkdir /data/vendor/sensors
     chown system system /data/vendor/sensors

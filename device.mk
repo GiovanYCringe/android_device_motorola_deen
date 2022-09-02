@@ -418,8 +418,6 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
-<<<<<<< HEAD:device.mk
-=======
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
@@ -431,7 +429,6 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-vendorcompat \
     libprotobuf-cpp-lite-vendorcompat
 
->>>>>>> a0a5da5d (sdm660-common: Build android.hardware.power@1.2):common.mk
 # QMI
 PRODUCT_PACKAGES += \
     libjson \

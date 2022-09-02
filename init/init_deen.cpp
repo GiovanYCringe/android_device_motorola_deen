@@ -112,3 +112,11 @@ void vendor_load_properties()
     std::string carrier = GetProperty("ro.boot.carrier", "unknown");
     property_override("ro.carrier", carrier.c_str());
 }
+
+
+constexpr const char *BUILD_DESCRIPTION[] = {
+    "coral-user 12 SQ3A.220605.009.A1 8643238 release-keys",
+    "coral-user 12 SQ3A.220605.009.A1 8643238 release-keys",
+    "coral-user 12 SQ3A.220605.009.A1 8643238 release-keys",
+};
+

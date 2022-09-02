@@ -36,6 +36,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=deen \
-    PRIVATE_BUILD_DESC="deen-user 10 QPKS30.54-22-27 92b8a release-keys"
+    PRIVATE_BUILD_DESC="coral-user 12 SQ3A.220605.009.A1 8643238 release-keys"
 
-BUILD_FINGERPRINT := motorola/deen/deen_sprout:10/QPKS30.54-22-27/92b8a:user/release-keys
+BUILD_FINGERPRINT := google/coral/coral:12/SQ3A.220605.009.A1/8643238:user/release-keys

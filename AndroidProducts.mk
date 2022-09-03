@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/havoc_deen.mk
+    $(LOCAL_DIR)/awaken_deen.mk
 
 COMMON_LUNCH_CHOICES := \
-    havoc_deen-user \
-    havoc_deen-userdebug \
-    havoc_deen-eng
+    awaken_deen-user \
+    awaken_deen-userdebug \
+    awaken_deen-eng
